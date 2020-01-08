@@ -13,6 +13,7 @@
 #include "mfs.hh"
 
 void initmultiboot(u64 mbmagic, u64 mbaddr);
+void debugmultiboot(void);
 void initpic(void);
 void initextpic(void);
 void inituart(void);
@@ -189,6 +190,7 @@ cmain(u64 mbmagic, u64 mbaddr)
 
   initmultiboot(mbmagic, mbaddr);
   inituart();
+  debugmultiboot();
   initvga();               // Requires initmultiboot
   initcmdline();           // Requires initmultiboot
   initphysmem();           // Requires initmultiboot
